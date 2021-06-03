@@ -1,0 +1,367 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/* ALL
+======================================*/
+html {
+	font-family: "游ゴシック体","Yu Gothic",Osaka,"メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6em;
+}
+
+.wrap {
+	max-width: 960px; 
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+
+/* header
+======================================*/
+
+.header__logo--denpaACA {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 40px;
+}
+
+	.header__logo--denpaACA a img {
+		height: 60px;
+	}
+
+.header__logo--alumni h1 a img {
+	width: 266px;
+}
+
+
+
+/* nav
+======================================*/
+header nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+nav ul {
+	height: 30px;
+    list-style: none;
+	text-align: center;
+	font-weight: bold;
+    display: flex;
+	align-items: center;
+}
+
+.nav__line--red {
+	color: #d3162c;
+}
+
+nav ul a {
+	display: block;
+	text-decoration: none;
+	color: #000;
+	padding: 20px;
+	line-height: 1;
+}       
+
+nav ul a:hover {
+	opacity: 0.6;
+	transition: 0.2s;
+}
+
+
+/* main
+======================================*/
+section {
+	padding-top: 150px;
+	padding-bottom: 150px;
+}
+
+section:first-child {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.section__title {
+	font-size: 4rem;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.section__title::before {
+	content: "";
+	display: block;
+	width: 60px;
+	height: 5px;
+	border-radius: 10px;
+	background-color: #d3162c;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 8px;
+}
+
+.conponent__bottom {
+	position: relative;
+	display: block;
+	width: 224px; height: 45px;
+	margin-left: auto; margin-right: auto;
+	border-radius: 23px;
+	background-color: #d3162c;
+	color: #fff;
+	border: 1px solid #d3162c;;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 45px;
+	letter-spacing: 0.2rem;
+}
+
+.conponent__bottom:hover {
+	transition: 0.2s;
+	background-color: #fff;
+	color:  #d3162c;
+	border: 1px solid #d3162c;
+}
+
+.conponent__bottom--arrow {
+	position: absolute;
+	top: 14px;
+	right: 16px;
+}
+
+/* main(hero-img)
+======================================*/
+.main__Heroimg {
+	margin-top: -40px;
+	position: relative;
+}
+
+.Heroimg__img {
+	width: 630px; height: 366px;
+	margin-left: auto;
+	margin-right: auto;	
+	background-image: url("image/photo_main.jpg");
+	background-color: #D3162C;
+	background-position: center;
+	background-size: cover;
+}
+
+.Heroimg__copy--vertical {
+	height: 230px;
+	display: inline-block;
+	-webkit-writing-mode: vertical-rl;
+	-moz-writing-mode: vertical-rl;
+	-ms-writing-mode: tb-rl;
+	-ms-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
+}
+
+.Heroimg__copy--left {
+	position: absolute;
+	left: 85px; bottom: 0;
+	font-weight: bold;
+	line-height: 2.4rem;
+}
+
+.Heroimg__copy--right {
+	position: absolute;
+	right: 80px; top: 0;
+	font-family: 'Train One', cursive;
+	font-size: 2.4rem;
+	line-height: 3.2rem;
+	color: #d3162c;
+}
+
+
+
+
+/* main(News)
+======================================*/
+
+.main__News {
+	margin-top: -45px;
+	
+	background-size: auto auto;
+	background-color: rgba(211, 22, 44, 0.2);
+	background-image: repeating-linear-gradient(135deg, transparent, transparent 6px, rgba(255, 255, 255, 0.4) 6px, rgba(255, 255, 255, 0.4) 7px );
+}
+
+.News__conteiner {
+	padding-left: 100px;
+	padding-right: 100px;
+	margin-bottom: 40px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.News__item {
+	width: 230px;
+	text-decoration: none;
+	color: #000;
+}
+
+.News__item:hover {
+	opacity: 0.7;
+}
+
+.News__detail--category-day {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.News__category--notice {
+	width: 98px; height: 20px;
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #d3162c;
+	border: 1px solid #d3162c;
+	border-radius: 10px;
+	background-color: #fff;
+}
+
+.News__title {
+	text-align: justify;
+	text-justify: inter-ideograph;
+	font-size: 1.6rem;
+}
+
+
+
+
+/* main(Benefit)
+======================================*/
+.Benefit__background {
+	background-image: url("image/pc_bg_top.png"),url("image/pc_bg_bottom.png");
+	background-repeat: no-repeat,no-repeat;
+	background-position: center top,center bottom;
+	background-size: 100% auto;
+}
+
+
+.Benefit__section {
+	width: 790px;
+	padding: 48px 72px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 24px;
+	border-radius: 15px;
+	background-color: #fff;
+	box-shadow: 0 0px 3px 0 rgba(0,0,0,0.10),
+				0 3px 6px 0 rgba(0,0,0,0.15);
+}
+
+.Benefit__section--title {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin-bottom: 24px;
+}
+
+.Benefit__section--nomber {
+	width: 64px;
+	vertical-align: bottom;
+	margin-right: 32px;
+	margin-top: -16px;
+}
+
+.Benefit__section--copy {
+	font-size: 3.2rem;
+	padding-bottom: 8px;
+	border-bottom: 3px dotted #d3162c;
+}
+
+
+.Benefit__section--detail {
+	display: flex;
+	justify-content: space-between;
+}
+
+.Benefit__section--text {
+	width: 284px;
+	line-height: 2;
+	text-align: justify;
+	text-justify: inter-ideograph;
+}
+
+.Benefit__section--link {
+	display: block;
+	width: 200px; height: 36px;
+	margin-top: 24px;
+	margin-left: auto;
+	text-align: center;
+	line-height: 36px;
+	border: 1px solid #d3162c;
+	border-radius: 30px;
+	font-size: 1.4rem;
+	font-weight: bold;
+	color: #d3162c;
+	text-decoration: none;
+}
+
+.Benefit__section--link:hover {
+	transition: 0.2s;
+	background-color: #d3162c;
+	color: #fff;
+	border: 1px solid #d3162c;
+}
+
+.Benefit__section--link i {
+	margin-left: 1rem;
+}
+
+.Benefit__section--attention {
+	font-size: 1.4rem;
+	text-align: center;
+}
+
+
+/* footer
+======================================*/
+footer {
+	font-size: 1.4rem;
+	padding: 50px 0;
+	color: #fff;
+	background-color: #d3162c;
+	text-align: center;
+}
+
+footer nav ul {
+	margin-bottom: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer nav ul a {
+	font-size: 1.6rem;
+	color: #fff;
+	line-height: 1;
+	text-decoration: none;
+	padding: 20px;
+} 
+
+footer nav ul a:hover {
+	opacity: 0.7;
+	transition: 0.2s;
+}
+
+footer p {
+	line-height: 2;
+}
+
+.footer__school--all {
+	font-weight: bold;
+}
+
+.footer__school--name {
+	font-size: 1.6rem;
+}
