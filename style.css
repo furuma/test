@@ -22,57 +22,204 @@ body {
 
 
 
-/* header
+/* header（PC）
 ======================================*/
-
-.header__logo--denpaACA {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 40px;
+.PCheader__logo--ACA {
+	display: none;
 }
 
-	.header__logo--denpaACA a img {
-		height: 60px;
+.PCheader__logo--denpa {
+	height: 60px;
+}
+
+@media screen and (min-width:960px) { 
+	.PCheader__logo--ACA {
+		display: block;
+	}
+	
+	.PCheader__logo--denpaACA {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 40px;
 	}
 
-.header__logo--alumni h1 a img {
-	width: 266px;
+		.PCheader__logo--denpaACA a img {
+			height: 60px;
+		}
+
+		.PCheader__logo--alumni h1 a img {
+			width: 266px;
+		}
 }
 
-
-
-/* nav
+/* nav（PC）
 ======================================*/
-header nav {
-	display: flex;
-	justify-content: space-between;
+#PCnav__header {
+	display: none;
 }
 
-nav ul {
-	height: 30px;
-    list-style: none;
-	text-align: center;
-	font-weight: bold;
-    display: flex;
-	align-items: center;
+@media screen and (min-width:960px) { 
+	#PCnav__header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	#PCnav__header ul {
+		height: 30px;
+		list-style: none;
+		text-align: center;
+		font-weight: bold;
+		display: flex;
+		align-items: center;
+	}
+
+	.PCnav__line--red {
+		color: #d3162c;
+	}
+
+	#PCnav__header ul a {
+		display: block;
+		text-decoration: none;
+		color: #000;
+		padding: 20px;
+		line-height: 1;
+	}       
+
+	#PCnav__header ul a:hover {
+		opacity: 0.6;
+		transition: 0.2s;
+	}
 }
 
-.nav__line--red {
-	color: #d3162c;
+
+
+
+/* nav（SP）
+======================================*/
+#SPnav__header {
+    display: block;
 }
 
-nav ul a {
-	display: block;
-	text-decoration: none;
-	color: #000;
-	padding: 20px;
-	line-height: 1;
-}       
-
-nav ul a:hover {
-	opacity: 0.6;
-	transition: 0.2s;
+#SPnav__HamburgerMenu--open {
+    position: fixed;
+	z-index: 9999;
+    top: 12px;; right: 12px;
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
 }
+
+/*ハンバーガーアイコンをCSSだけで表現*/
+#SPnav__HamburgerMenu--open span, #SPnav__HamburgerMenu--open span:before, #SPnav__HamburgerMenu--open span:after {
+  position: absolute;
+  transition: all 0.4s;
+  height: 3px;/*線の太さ*/
+  width: 25px;/*長さ*/
+  border-radius: 3px;
+  background: #000;
+  display: block;
+  content: '';
+  cursor: pointer;
+  z-index: 9999;/*最前面*/
+}
+
+#SPnav__HamburgerMenu--open span:before {
+  bottom: -8px;
+}
+
+#SPnav__HamburgerMenu--open span:after {
+  bottom: -16px;
+}
+
+
+/*中身*/
+#SPnav__HamburgerMenu--content {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  transition: .2s ease-in-out;
+}
+
+#SPnav__HamburgerMenu--content.open {
+  display: block;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9998;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);/*背景色*/
+  overflow: hidden;/*ブラー効果でボヤけた部分を非表示*/
+}
+
+
+/*:beforeにぼかし効果を設定する*/
+#SPnav__HamburgerMenu--content.open :before {
+  content: '';
+  overflow: hidden;
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+  z-index: -1;/*重なり順序を一番下にしておく*/
+}
+
+
+/*チェックが入ったら表示する内容*/
+
+.SPnav__hamburgerMenu--top {
+  height: 40px;/*×ボタンと被らないように*/
+}
+
+.SPnav__hamburgerMenu--category {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.SPnav__hamburgerMenu--CategoryTitle {
+  padding: 0.5rem;
+  margin-left: -2rem;
+  list-style: none;
+}
+
+.SPnav__hamburgerMenu--CategoryTitle a {
+  color: #333;
+  text-decoration: none;
+}
+
+
+/*三本線を動かす*/
+#SPnav__HamburgerMenu--open.active span {
+  -webkit-transform: translateY(8px) rotate(-45deg);
+  transform: translateY(8px) rotate(-45deg);
+  background-color: #888;
+}
+
+#SPnav__HamburgerMenu--open.active span:before {
+  -webkit-transform: translateY(-8px) rotate(45deg);/*打ち消す*/
+  transform: translateY(-8px) rotate(45deg);/*打ち消す*/
+  opacity: 0;
+}
+
+#SPnav__HamburgerMenu--open.active span:after {
+  -webkit-transform: translateY(-16px) rotate(45deg);
+  transform: translateY(-16px) rotate(90deg);
+  background-color: #888;
+}
+
+@media screen and (min-width:960px) { 
+	#SPnav__header {
+		display: none;
+	}	
+}
+
+
 
 
 /* main
@@ -334,14 +481,18 @@ footer {
 	text-align: center;
 }
 
-footer nav ul {
+#PCnav__footer ul {
 	margin-bottom: 40px;
-	display: flex;
-	justify-content: center;
+    list-style: none;
+	font-weight: bold;
+    display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
-footer nav ul a {
+
+#PCnav__footer a {
+	display: block;
 	font-size: 1.6rem;
 	color: #fff;
 	line-height: 1;
@@ -349,7 +500,7 @@ footer nav ul a {
 	padding: 20px;
 } 
 
-footer nav ul a:hover {
+#PCnav__footer ul a:hover {
 	opacity: 0.7;
 	transition: 0.2s;
 }
