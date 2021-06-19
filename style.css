@@ -125,7 +125,8 @@ body {
 	text-align: center;
 	font-size: 1.1rem;
 	position: relative;
-	bottom: -3px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #SPnav__HamburgerMenu--open span, #SPnav__HamburgerMenu--open span:before, #SPnav__HamburgerMenu--open span:after {
@@ -437,10 +438,24 @@ section:first-child {
 	justify-content: space-between;
 }
 
+@media screen and (max-width: 960px) {
+	.News__conteiner {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
 .News__item {
 	width: 230px;
 	text-decoration: none;
 	color: #000;
+}
+
+@media screen and (max-width: 960px) {
+	.News__item {
+		margin-bottom: 48px;
+	}
 }
 
 .News__item:hover {
@@ -475,18 +490,9 @@ section:first-child {
 }
 
 
-/* SP用 */
-@media screen and (max-width: 960px) {
-	.News__conteiner {
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-	
-	.News__item {
-		margin-bottom: 24px;
-	}
-}
+
+
+
 
 
 
