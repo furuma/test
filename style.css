@@ -25,69 +25,74 @@ body {
 /* header（PC）
 ======================================*/
 .PCheader__logo--ACA {
-	display: none;
+    display: block;
 }
 
-.PCheader__logo--denpa {
-	height: 60px;
+.PCheader__logo--denpaACA {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
 }
 
-@media screen and (min-width:960px) { 
+    .PCheader__logo--denpaACA a img {
+        height: 60px;
+    }
+
+    .PCheader__logo--alumni h1 a img {
+        width: 266px;
+    }
+
+
+@media screen and (max-width:960px) { 
 	.PCheader__logo--ACA {
-		display: block;
-	}
-	
-	.PCheader__logo--denpaACA {
-		display: flex;
-		justify-content: space-between;
-		margin-bottom: 40px;
+		display: none;
 	}
 
-		.PCheader__logo--denpaACA a img {
-			height: 60px;
-		}
-
-		.PCheader__logo--alumni h1 a img {
-			width: 266px;
-		}
+	.PCheader__logo--denpa {
+		height: 60px;
+	}
 }
+
+
+
 
 /* nav（PC）
 ======================================*/
 #PCnav__header {
-	display: none;
+    display: flex;
+    justify-content: space-between;
 }
 
-@media screen and (min-width:960px) { 
+#PCnav__header ul {
+    height: 30px;
+    list-style: none;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.PCnav__line--red {
+    color: #d3162c;
+}
+
+#PCnav__header ul a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding: 20px;
+    line-height: 1;
+}       
+
+#PCnav__header ul a:hover {
+    opacity: 0.6;
+    transition: 0.2s;
+}
+
+
+@media screen and (max-width:960px) { 
 	#PCnav__header {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	#PCnav__header ul {
-		height: 30px;
-		list-style: none;
-		text-align: center;
-		font-weight: bold;
-		display: flex;
-		align-items: center;
-	}
-
-	.PCnav__line--red {
-		color: #d3162c;
-	}
-
-	#PCnav__header ul a {
-		display: block;
-		text-decoration: none;
-		color: #000;
-		padding: 20px;
-		line-height: 1;
-	}       
-
-	#PCnav__header ul a:hover {
-		opacity: 0.6;
-		transition: 0.2s;
+		display: none;
 	}
 }
 
@@ -97,30 +102,41 @@ body {
 /* nav（SP）
 ======================================*/
 #SPnav__header {
-    display: block;
-}
+	display: none;
+}	
 
 #SPnav__HamburgerMenu--open {
     position: fixed;
 	z-index: 9999;
-    top: 12px;; right: 12px;
-  display: inline-block;
-  width: 30px;
-  height: 22px;
-  vertical-align: middle;
+    top: 0px;; right: 12px;
+	display: inline-block;
+	width: 35px;
+	height: 30px;
+	vertical-align: middle;
+	cursor: pointer;
 }
 
 /*ハンバーガーアイコンをCSSだけで表現*/
+#SPnav__HamburgerMenu--open:before {
+	display: inline-block;
+	content: "MENU";
+	color: #d3162c;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1.1rem;
+	position: relative;
+	bottom: -3px;
+}
+
 #SPnav__HamburgerMenu--open span, #SPnav__HamburgerMenu--open span:before, #SPnav__HamburgerMenu--open span:after {
   position: absolute;
   transition: all 0.4s;
-  height: 3px;/*線の太さ*/
-  width: 25px;/*長さ*/
+  height: 4px;/*線の太さ*/
+  width: 35px;/*長さ*/
   border-radius: 3px;
-  background: #000;
+  background: #d3162c;
   display: block;
   content: '';
-  cursor: pointer;
   z-index: 9999;/*最前面*/
 }
 
@@ -184,15 +200,27 @@ body {
 
 .SPnav__hamburgerMenu--CategoryTitle {
   padding: 0.5rem;
-  margin-left: -2rem;
   list-style: none;
 }
 
+/* メニューオープン時のリンク文字設定 */
 .SPnav__hamburgerMenu--CategoryTitle a {
-  color: #333;
-  text-decoration: none;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.6rem;
+	color: #333;
+	font-weight: bold;
+	text-decoration: none;
+	display: block;
+	padding-bottom: 0.8rem;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid #A9A9A9;
 }
 
+.SPnav__hamburgerMenu--CategoryTitle a:hover {
+	opacity: 0.7;
+}
 
 /*三本線を動かす*/
 #SPnav__HamburgerMenu--open.active span {
@@ -213,14 +241,24 @@ body {
   background-color: #888;
 }
 
-@media screen and (min-width:960px) { 
-	#SPnav__header {
-		display: none;
-	}	
+#SPnav__HamburgerMenu--open.active :before {
+	color: #888;
 }
 
 
+@media screen and (max-width:960px) { 
+	#SPnav__header {
+		display: block;
+	}
+	
+	.PCheader__logo--denpa {
+		margin-left: 0.8rem;
+		margin-top: 0.8rem;
+	}
+}
 
+
+ 
 
 /* main
 ======================================*/
@@ -284,9 +322,27 @@ section:first-child {
 
 /* main(hero-img)
 ======================================*/
+.SPheroimg__logo--alumni {
+	display: none;
+}
+
+@media screen and (max-width: 960px) {
+	.SPheroimg__logo--alumni {
+		display: block;
+		width: 35%;
+		margin-left: 0.8rem;
+	}
+}
+
 .main__Heroimg {
 	margin-top: -40px;
 	position: relative;
+}
+
+@media screen and (max-width: 960px) {
+	.main__Heroimg {
+		margin-top: 0;
+	}
 }
 
 .Heroimg__img {
@@ -299,8 +355,17 @@ section:first-child {
 	background-size: cover;
 }
 
+@media screen and (max-width: 960px) {
+	.Heroimg__img {
+		margin-top: -8vh;
+		width: 90vw; height: 50vh;
+		background-image: url( "image/sp_photo_main.jpg");
+		background-position: center top;
+		background-size: cover;
+	}
+}
+
 .Heroimg__copy--vertical {
-	height: 230px;
 	display: inline-block;
 	-webkit-writing-mode: vertical-rl;
 	-moz-writing-mode: vertical-rl;
@@ -309,11 +374,26 @@ section:first-child {
 	writing-mode: vertical-rl;
 }
 
+@media screen and (max-width: 960px) {
+	.Heroimg__copy--vertical {
+		writing-mode: horizontal-tb;
+		text-align: right;
+	}
+}
+
 .Heroimg__copy--left {
 	position: absolute;
 	left: 85px; bottom: 0;
 	font-weight: bold;
 	line-height: 2.4rem;
+}
+
+@media screen and (max-width: 960px) {
+	.Heroimg__copy--left {
+		right: 3vw; top: 0;
+		font-size: 3vw;
+		line-height: 1.5;
+	}
 }
 
 .Heroimg__copy--right {
@@ -325,7 +405,17 @@ section:first-child {
 	color: #d3162c;
 }
 
-
+@media screen and (max-width: 960px) {
+	.Heroimg__copy--right {
+		writing-mode: horizontal-tb;
+		font-size: 5vw;
+		line-height: 1.5;
+		text-align: right;
+		color: #fff;
+		top: auto;
+		bottom: 0; right: 6vw;
+	}
+}
 
 
 /* main(News)
@@ -360,11 +450,13 @@ section:first-child {
 .News__detail--category-day {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	margin-top: 8px;
 	margin-bottom: 8px;
 }
 
 .News__category--notice {
+	box-sizing: content-box;
 	width: 98px; height: 20px;
 	text-align: center;
 	font-size: 1.2rem;
@@ -379,8 +471,22 @@ section:first-child {
 	text-align: justify;
 	text-justify: inter-ideograph;
 	font-size: 1.6rem;
+	line-height: 1.5;
 }
 
+
+/* SP用 */
+@media screen and (max-width: 960px) {
+	.News__conteiner {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.News__item {
+		margin-bottom: 24px;
+	}
+}
 
 
 
