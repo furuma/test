@@ -512,12 +512,25 @@ section:first-child {
 				0 3px 6px 0 rgba(0,0,0,0.15);
 }
 
+@media screen and (max-width: 960px) {
+	.Benefit__section {
+		width: 90vw;
+	}
+}
+
 .Benefit__section--title {
 	position: relative;
 	display: flex;
 	align-items: center;
 	margin-bottom: 24px;
 }
+
+@media screen and (max-width: 960px) {
+	.Benefit__section--title {
+		flex-direction: column;
+	}	
+}
+
 
 .Benefit__section--nomber {
 	width: 64px;
@@ -526,10 +539,25 @@ section:first-child {
 	margin-top: -16px;
 }
 
+@media screen and (max-width: 960px) {
+	.Benefit__section--nomber {
+		width: 38px;
+		margin-bottom: 2.4rem;
+	}
+}
+
 .Benefit__section--copy {
 	font-size: 3.2rem;
 	padding-bottom: 8px;
 	border-bottom: 3px dotted #d3162c;
+}
+
+@media screen and (max-width: 960px) {
+	.Benefit__section--copy {
+		font-size: 2.4rem;
+		line-height: 1.5;
+		text-align: center;
+	}
 }
 
 
@@ -538,11 +566,24 @@ section:first-child {
 	justify-content: space-between;
 }
 
+@media screen and (max-width: 960px) {
+	.Benefit__section--detail {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
 .Benefit__section--text {
 	width: 284px;
 	line-height: 2;
 	text-align: justify;
 	text-justify: inter-ideograph;
+}
+
+@media screen and (max-width: 960px) {
+	.Benefit__section--text {
+		margin-top: 2.4rem;
+	}
 }
 
 .Benefit__section--link {
@@ -558,6 +599,12 @@ section:first-child {
 	font-weight: bold;
 	color: #d3162c;
 	text-decoration: none;
+}
+
+@media screen and (max-width: 960px) {
+	.Benefit__section--link {
+		margin-right: auto;
+	}
 }
 
 .Benefit__section--link:hover {
@@ -587,6 +634,12 @@ footer {
 	text-align: center;
 }
 
+@media screen and (max-width: 960px) {
+	footer {
+		font-size: 1.2rem;
+	}
+}
+
 #PCnav__footer ul {
 	margin-bottom: 40px;
     list-style: none;
@@ -596,6 +649,11 @@ footer {
 	justify-content: center;
 }
 
+@media screen and (max-width: 960px) {
+	#PCnav__footer ul {
+		flex-wrap: wrap;
+	}
+}
 
 #PCnav__footer a {
 	display: block;
@@ -606,6 +664,13 @@ footer {
 	padding: 20px;
 } 
 
+@media screen and (max-width: 960px) {
+	#PCnav__footer a {
+		padding: 10px;
+	}
+}
+
+
 #PCnav__footer ul a:hover {
 	opacity: 0.7;
 	transition: 0.2s;
@@ -615,6 +680,16 @@ footer p {
 	line-height: 2;
 }
 
+.PCnav__bleak {
+	display: block;
+}
+
+@media screen and (max-width: 960px) {
+	.PCnav__bleak {
+		display: inline;
+	}
+} 
+
 .footer__school--all {
 	font-weight: bold;
 }
@@ -622,3 +697,9 @@ footer p {
 .footer__school--name {
 	font-size: 1.6rem;
 }
+
+@media screen and (max-width: 960px) {
+	.footer__school--name {
+		display: block;
+	}
+} 
