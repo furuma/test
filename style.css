@@ -19,6 +19,9 @@ body {
 	margin-right: auto;
 }
 
+.text__breakpoint {
+	display: inline-block;
+}
 
 
 
@@ -553,7 +556,9 @@ section:first-child {
 }
 
 .Benefit__section--copy {
+	display: inline-block;
 	font-size: 3.2rem;
+	line-height: 1.5;
 	padding-bottom: 8px;
 	border-bottom: 3px dotted #d3162c;
 }
@@ -561,8 +566,11 @@ section:first-child {
 @media screen and (max-width: 960px) {
 	.Benefit__section--copy {
 		font-size: 2.4rem;
-		line-height: 1.5;
 		text-align: center;
+	}
+	
+	.Benefit__section--copy .text__breakpoint {
+		display: inline;
 	}
 }
 
