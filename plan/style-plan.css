@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.Plan__buttom {
+	display: block;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 100px;
+	width: 60%;
+	height: 80px;
+	line-height: 80px;
+	text-decoration: none;
+	text-align: center;
+	font-size: 2.4rem;
+	font-weight: bold;
+	color: #d3162c;
+	background-color: #fff;	
+	border: 2px solid #d3162c;
+	border-radius: 100px;
+}
+
+@media screen and (max-width: 960px) {
+	.Plan__buttom {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.Plan__buttom {
+		font-size: 5vw;
+	}
+}
+
+.Plan__buttom:hover {
+	background-color: #d3162c;
+	color: #fff;
+	transition: 0.3s
+}
+
+.fa-angle-right {
+	position: absolute;
+	right: 10%;
+	top: 40%;
+}
+
+.Plan__boder {
+	border: 2px solid #e5e5e5;
+}
